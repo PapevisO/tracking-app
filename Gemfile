@@ -28,8 +28,14 @@ gem 'jbuilder', '~> 2.7'
 # Reduces boot times through caching; required in config/boot.rb
 gem 'bootsnap', '>= 1.4.2', require: false
 
+gem "amqp", "~> 1.8"
+gem "bunny", "~> 2.19"
+gem "hashie", "~> 5.0"
+gem "env-tweaks", "~> 1.0.0"
+
 group :development, :test do
   # Call 'byebug' anywhere in the code to stop execution and get a debugger console
+  gem 'pry-byebug',   '~> 3.7'
   gem 'byebug', platforms: [:mri, :mingw, :x64_mingw]
 end
 

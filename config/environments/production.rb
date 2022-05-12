@@ -1,3 +1,8 @@
+# encoding: UTF-8
+# frozen_string_literal: true
+
+require File.expand_path('../shared', __FILE__)
+
 Rails.application.configure do
   # Settings specified here will take precedence over those in config/application.rb.
 
@@ -74,7 +79,7 @@ Rails.application.configure do
   config.active_support.deprecation = :notify
 
   # Use default logging formatter so that PID and timestamp are not suppressed.
-  config.log_formatter = ::Logger::Formatter.new
+  config.log_formatter = ::JSONLogFormatter.new
 
   # Use a different logger for distributed setups.
   # require 'syslog/logger'
@@ -82,9 +87,13 @@ Rails.application.configure do
 
   if ENV["RAILS_LOG_TO_STDOUT"].present?
     logger           = ActiveSupport::Logger.new(STDOUT)
-    logger.formatter = config.log_formatter
     config.logger    = ActiveSupport::TaggedLogging.new(logger)
   end
+
+  config.logger.formatter = config.log_formatter
+
+  # Disable colorize logging in production
+  config.colorize_logging = false
 
   # Do not dump schema after migrations.
   config.active_record.dump_schema_after_migration = false

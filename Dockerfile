@@ -32,6 +32,11 @@ RUN chown app:app -R /usr/local/bundle
 
 USER app
 
+COPY --chown=app:app Gemfile-snapshot-d05fad6.tar $APP_HOME/
+RUN tar -xvf Gemfile-snapshot-d05fad6.tar
+
+RUN bundle install --jobs=$(nproc)
+
 COPY --chown=app:app Gemfile Gemfile.lock $APP_HOME/
 
 RUN bundle install --jobs=$(nproc)
@@ -40,8 +45,6 @@ ENV NODE_VERSION 12.20.2
 
 COPY --from=node:12.20.2-stretch --chown=${UID}:${GID} /usr/local /usr/local
 COPY --from=node:12.20.2-stretch --chown=${UID}:${GID} /opt /opt
-
-COPY --chown=app:app . $APP_HOME
 
 EXPOSE 3000
 
