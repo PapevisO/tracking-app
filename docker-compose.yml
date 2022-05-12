@@ -1,0 +1,20 @@
+version: '3.5'
+
+services:
+  app:
+    build:
+      context: .
+    volumes:
+      - .:/home/app
+    environment:
+      - VIRTUAL_HOST=tracking-app.papievis.com
+      - VIRTUAL_PORT=3000
+      - VIRTUAL_PROTO=http
+      - SSL_POLICY=Mozilla-Modern
+      - LETSENCRYPT_HOST=tracking-app.papievis.com
+      - LETSENCRYPT_EMAIL=postmaster@papievis.com
+
+networks:
+  default:
+    external:
+      name: nginx-proxy
