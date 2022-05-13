@@ -1,0 +1,23 @@
+<p id="notice"><%= notice %></p>
+
+<h1>Statistics dashboard</h1>
+
+<table>
+  <thead>
+    <tr>
+      <th align='left'>Url</th>
+      <th></th>
+      <th align='left'>Redirected times</th>
+    </tr>
+  </thead>
+
+  <tbody>
+    <% @records.each do |url, count| %>
+      <tr>
+        <td><%= url %></td>
+        <td></td>
+        <td><%= count %></td>
+      </tr>
+    <% end %>
+  </tbody>
+</table>

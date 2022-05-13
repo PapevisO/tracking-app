@@ -28,10 +28,11 @@ gem 'jbuilder', '~> 2.7'
 # Reduces boot times through caching; required in config/boot.rb
 gem 'bootsnap', '>= 1.4.2', require: false
 
-gem "amqp", "~> 1.8"
-gem "bunny", "~> 2.19"
-gem "hashie", "~> 5.0"
-gem "env-tweaks", "~> 1.0.0"
+gem 'amqp', '~> 1.8'
+gem 'bunny', '~> 2.19'
+gem 'hashie', '~> 5.0'
+gem 'env-tweaks', '~> 1.0.0'
+gem 'shortener'
 
 group :development, :test do
   # Call 'byebug' anywhere in the code to stop execution and get a debugger console
@@ -60,4 +61,4 @@ end
 # Windows does not include zoneinfo files, so bundle the tzinfo-data gem
 gem 'tzinfo-data', platforms: [:mingw, :mswin, :x64_mingw, :jruby]
 
-gem "maxmind-db", "~> 1.1"
+gem 'maxmind-db', '~> 1.1'

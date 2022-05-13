@@ -4,6 +4,8 @@ x-daemon: &app-or-daemon
   build:
     context: .
   volumes:
+    - ./Gemfile:/home/app/Gemfile
+    - ./Gemfile.lock:/home/app/Gemfile.lock
     - ./app:/home/app/app
     - ./bin:/home/app/bin
     - ./.bundle:/home/app/.bundle

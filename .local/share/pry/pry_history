@@ -187,3 +187,14 @@ Record.group(:url)
 Record.group_by(:url)
 Record.group_by(:url).count
 Record.group(:url).count
+records = Record.group(:url).count
+records['unknown'] = records.delete nil
+records
+exit
+records = Record.group(:url).count
+records['unknown'] = records.delete nil
+records.each{|k,v| puts "#{k} #{v}"}
+exit
+Shortener
+Shortener::ShortenedUrlsController
+exit
