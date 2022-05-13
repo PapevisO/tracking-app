@@ -1,7 +1,7 @@
 class MainController < ApplicationController
   before_action :set_record, only: %i[ show edit update destroy ]
 
-  # GET /records or /records.json
+  # GET /
   def index   
     AMQP::Queue.enqueue :record, to_payload, {}
     

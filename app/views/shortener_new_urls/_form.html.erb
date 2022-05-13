@@ -1,0 +1,7 @@
+<%= form_for :shortened_url, :url => { :action => "create" }  do |form| %>
+  Url: <%= form.text_field :url, style: 'width: 400px;' %><br />
+
+  <div class="actions">
+    <%= form.submit %>
+  </div>
+<% end %>

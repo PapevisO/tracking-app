@@ -198,3 +198,28 @@ exit
 Shortener
 Shortener::ShortenedUrlsController
 exit
+ShortenerNewUrlsController
+exit
+Shortener::ShortenedUrl
+Shortener::ShortenedUrl.all
+Shortener::ShortenedUrl.new
+Shortener::ShortenedUrl.new url: params[:url]
+URI
+URI.encode "hg"
+params
+params[:shortened_url]
+params.dig :shortened_url, :url
+next
+@shortened_url
+@shortened_url.url
+@shortened_url.unique_key
+@shortened_url
+@shortened_url.errors
+@shortened_url.errors.count
+@shortened_url
+"https://tracking-app.papievis.com/s/#{@shortened_url.unique_key}"
+next
+Shortener::ShortenedUrl.all
+exit
+Shortener::ShortenedUrl.all
+Shortener::ShortenedUrl.last

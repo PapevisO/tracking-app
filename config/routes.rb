@@ -4,7 +4,8 @@ Rails.application.routes.draw do
   get '/stats', action: :index, controller: 'stats'
   get '/s/:id' => "shortener/shortened_urls#show"
 
-  post '/n', action: :new, controller: 'shortener_new_urls'
+  get '/urls/new' => 'shortener_new_urls#new'
+  post '/urls/new' => 'shortener_new_urls#create'
 
   get '/' => 'main#index'
 
