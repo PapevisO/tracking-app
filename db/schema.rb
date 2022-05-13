@@ -13,7 +13,7 @@
 ActiveRecord::Schema.define(version: 2022_05_10_152157) do
 
   create_table "records", force: :cascade do |t|
-    t.datetime "visited_at"
+    t.string "uuid"
     t.string "ip"
     t.string "location"
     t.string "os"
@@ -21,6 +21,7 @@ ActiveRecord::Schema.define(version: 2022_05_10_152157) do
     t.string "referrer"
     t.string "url"
     t.string "language"
+    t.datetime "visited_at"
     t.datetime "created_at", precision: 6, null: false
     t.datetime "updated_at", precision: 6, null: false
   end

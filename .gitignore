@@ -40,3 +40,4 @@
 yarn-debug.log*
 .yarn-integrity
 /.cache
+.local/share/pry/pry_history

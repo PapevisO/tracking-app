@@ -1,2 +1,10 @@
 docker-compose.yml
 Dockerfile
+.git
+.gitignore
+LICENSE.md
+Makefile
+README.md
+.travis.yml
+VERSION
+config/charts

@@ -57,3 +57,133 @@ logger.log.level
 logger.log
 Rails.logger.level
 next
+AMQP::Queue.enqueue :record, {}, {"uuid"=>"00000000-0000-0000-0000-000000000000", "datetime"=>"2022-05-12T22:03:57+00:00", "ip"=>"200.20.2.2", "location"=>"Antarctic", "os"=>"MS DOS", "device"=>"Turing machine", "referrer"=>"https://tracking-app.papievis.com", "url"=>"https://tracking-app.papievis.com", "language"=>"EN_en"}
+AMQP::Queue.enqueue :record, {"uuid"=>"00000000-0000-0000-0000-000000000000", "datetime"=>"2022-05-12T22:03:57+00:00", "ip"=>"200.20.2.2", "location"=>"Antarctic", "os"=>"MS DOS", "device"=>"Turing machine", "referrer"=>"https://tracking-app.papievis.com", "url"=>"https://tracking-app.papievis.com", "language"=>"EN_en"}, {}
+TrackingApp::GeoIP
+TrackingApp::GeoIP.info(ip: '8.8.8.8', key: :country)
+exit
+TrackingApp::GeoIP.info(ip: '8.8.8.8', key: :country)
+ENV['MAXMINDDB_PATH']
+TrackingApp::GeoIP.info(ip: '128.438.128.28', key: :country)
+MaxMind::DB.new(TrackingApp::App.config.maxminddb_path, mode: MaxMind::DB::MODE_MEMORY)
+TrackingApp::App.config.maxminddb_path, mode: MaxMind::DB::MODE_MEMORY
+TrackingApp::App.config.maxminddb_path
+TrackingApp::App.config.app_name
+TrackingApp::App.config.domain
+TrackingApp::App.maxminddb_path
+exit
+TrackingApp::App.maxminddb_path
+TrackingApp::App.config.maxminddb_path
+ENV.filter{|e| e.match? /MAX/}
+exit
+TrackingApp::App.config.maxminddb_path
+ENV.filter{|e| e.match? /MAX/}
+exit
+ENV.filter{|e| e.match? /MAX/}
+TrackingApp::App.config.maxminddb_path
+MaxMind::DB.new(TrackingApp::App.config.maxminddb_path, mode: MaxMind::DB::MODE_MEMORY)
+TrackingApp::GeoIP.info(ip: '128.438.128.28', key: :country)
+TrackingApp::GeoIP.info(ip: '128.138.128.28', key: :country)
+TrackingApp::GeoIP.info(ip: '128.138.128.28', key: :city)
+TrackingApp::GeoIP.info(ip: '128.138.128.28', key: :state)
+TrackingApp::GeoIP.info(ip: '128.138.128.28', key: :all)
+TrackingApp::GeoIP.info(ip: '128.138.128.28')
+TrackingApp::GeoIP.info(ip: '128.138.128.28', key: :most_specific_subdivision)
+TrackingApp::GeoIP.info(ip: '128.138.128.28', key: :location)
+TrackingApp::GeoIP.info(ip: '128.138.128.28', key: :latitude)
+TrackingApp::GeoIP.info(ip: '128.138.128.28', key: :          return record['continent']['names'][lang] if record['continent'])
+TrackingApp::GeoIP.info(ip: '128.138.128.28', key: :continent)
+MaxMind::DB.new(TrackingApp::App.config.maxminddb_path, mode: MaxMind::DB::MODE_MEMORY).get('128.138.128.28')
+MaxMind::DB.new(TrackingApp::App.config.maxminddb_path, mode: MaxMind::DB::MODE_MEMORY).get_with_prefix_length('128.138.128.28')
+exit
+include TrackingApp::RemoteIp
+remote_ip
+include TrackingApp::App
+TrackingApp::App.env
+TrackingApp::App.new.env
+env
+include TrackingApp::App
+env
+TrackingApp::App
+reload
+reload!
+TrackingApp::App.remote_ip
+ENV.filter{|e| e.match? /action/}
+ENV.keys.filter{|e| e.match? /action/}
+reload!
+TrackingApp::App.remote_ip
+reload!
+TrackingApp::App.remote_ip
+exit
+TrackingApp::App.remote_ip
+reload!
+TrackingApp::App.remote_ip
+exit
+TrackingApp::App.remote_ip
+reload!
+TrackingApp::App.remote_ip
+exit
+TrackingApp::App.remote_ip
+exit
+request.referrer
+request.url
+request.languages
+request.locale
+request.os
+request.dev
+request.user_agent
+request.userinfo
+request.username
+request.user
+request.platform
+request.platform_string
+request.platforms
+request.accept_language
+request.subject
+request.subject_request
+request
+request.sec_fraction
+request.http_header
+request.http_version
+request
+request.env
+request.env.http_header
+request.env.http_basic_authenticate_or_request_with
+request.env.http_basic_authenticate_with
+request.env
+request.env.second
+request.env
+request.query
+request.query_parameters
+params
+request.query_value
+request.query_parameters
+exit
+request.query_parameters
+request.query_parameters.fetch(:url)
+request.query_parameters.fetch(:url,nil)
+request.query_parameters.fetch(:urls,nil)
+request.query_parameters.fetch(:url,nil)
+request.query_parameters.[:url]
+request.query_parameters[:url]
+request.accept_language
+request.env.key.filter{|k| k.match? /HTTP_SEC/}
+request.env.keys.filter{|k| k.match? /HTTP_SEC/}
+request.env.each_header.with_object({}){|(k,v), http_sec| if k.match? /HTTP_SEC/} }
+request.env.each_header.with_object({}){|(k,v), http_sec| if k.match? /HTTP_SEC/}
+request.env.each_header.with_object({}){|(k,v), http_sec| http_sec[k]=v if k.match? /HTTP_SEC/ }
+request.env.each_pair.with_object({}){|(k,v), http_sec| http_sec[k]=v if k.match? /HTTP_SEC/ }
+request.env.each_pair.with_object({}){|(k,v), http_sec| http_sec[k.delete_prefix('HTTP_SEC_').downcase]=v if k.match? /HTTP_SEC/ }
+request.each_pair.with_object({}){|(k,v), http_sec| http_sec[k.delete_prefix('HTTP_SEC_').downcase]=v if k.match? /HTTP_SEC/ }
+request.env.action_
+Record.all
+payload
+Record.all
+Record.last
+params
+params[:id]
+Record.find params[:id]
+Record.group(:url)
+Record.group_by(:url)
+Record.group_by(:url).count
+Record.group(:url).count

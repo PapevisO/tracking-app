@@ -4,7 +4,21 @@ x-daemon: &app-or-daemon
   build:
     context: .
   volumes:
-    - .:/home/app   
+    - ./app:/home/app/app
+    - ./bin:/home/app/bin
+    - ./.bundle:/home/app/.bundle
+    - ./.cache:/home/app/.cache
+    - ./config:/home/app/config
+    - ./db:/home/app/db
+    - ./lib:/home/app/lib
+    - ./.local:/home/app/.local
+    - ./log:/home/app/log
+    - ./node_modules:/home/app/node_modules
+    - ./public:/home/app/public
+    - ./storage:/home/app/storage
+    - ./test:/home/app/test
+    - ./tmp:/home/app/tmp
+    - ./vendor:/home/app/vendor
   env_file:
     - ./app.env
 

@@ -2,12 +2,13 @@ class RecordsController < ApplicationController
   before_action :set_record, only: %i[ show edit update destroy ]
 
   # GET /records or /records.json
-  def index
+  def index   
     @records = Record.all
   end
 
   # GET /records/1 or /records/1.json
   def show
+    @record = Record.find(params[:id])
   end
 
   # GET /records/new
@@ -58,6 +59,7 @@ class RecordsController < ApplicationController
   end
 
   private
+
     # Use callbacks to share common setup or constraints between actions.
     def set_record
       @record = Record.find(params[:id])
